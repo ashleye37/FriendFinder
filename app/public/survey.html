@@ -200,16 +200,6 @@
 </html>
 
 <script type="text/javascript">
-  $(document).ready(function () {
-    $('.modal').modal({
-      dismissible: false, // Modal can be dismissed by clicking outside of the modal
-      opacity: .5, // Opacity of modal background
-      inDuration: 300, // Transition in duration
-      outDuration: 200, // Transition out duration
-      startingTop: '4%', // Starting top style attribute
-      endingTop: '10%' // Ending top style attribute
-    });
-  });
   // Activate submit button
   $('#submit').on('click', function (event) {
     event.preventDefault();
@@ -244,7 +234,7 @@
 
       // Add user selections to dog list
       $.post(currentURL + '/api/friends', userData)
-        .done(function (data) {
+        .then(function (data) {
           $('#match').html(data.name);
           $("#matchImg").attr("src", data.photo);
           $('#modalMatch').modal('open');
