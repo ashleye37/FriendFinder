@@ -51,7 +51,7 @@
       <div class="col-md-8">
         <div class="form-group">
           <h4><label for="question1">1. Your like to go to the dog park. </label></h4>
-          <select class="form-control">
+          <select class="form-control" id="question1">
             <option>Please select your answer</option>
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
@@ -64,7 +64,7 @@
       <div class="col-md-8">
         <div class="form-group">
           <h4><label for="question2">2. You like to swim. </label></h4>
-          <select class="form-control">
+          <select class="form-control" id="question2">
             <option>Please select your answer</option>
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
@@ -77,7 +77,7 @@
       <div class="col-md-8">
         <div class="form-group">
           <h4><label for="question3">3. You consider yourself a high energy individual. </label></h4>
-          <select class="form-control">
+          <select class="form-control" id="question3">
             <option>Please select your answer</option>
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
@@ -90,7 +90,7 @@
       <div class="col-md-8">
         <div class="form-group">
           <h4><label for="question4">4. You like long haired dogs. </label></h4>
-          <select class="form-control">
+          <select class="form-control" id="question4">
             <option>Please select your answer</option>
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
@@ -103,7 +103,7 @@
       <div class="col-md-8">
         <div class="form-group">
           <h4><label for="question5">5. You are ok with shedding. </label></h4>
-          <select class="form-control">
+          <select class="form-control" id="question5">
             <option>Please select your answer</option>
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
@@ -116,7 +116,7 @@
       <div class="col-md-8">
         <div class="form-group">
           <h4><label for="question6">6. You consider yourself an intelligent person. </label></h4>
-          <select class="form-control">
+          <select class="form-control" id="question6">
             <option>Please select your answer</option>
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
@@ -129,7 +129,7 @@
       <div class="col-md-8">
         <div class="form-group">
           <h4><label for="question7">7. You enjoy wrestling and playing fetch. </label></h4>
-          <select class="form-control">
+          <select class="form-control" id="question7">
             <option>Please select your answer</option>
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
@@ -142,7 +142,7 @@
       <div class="col-md-8">
         <div class="form-group">
           <h4><label for="question8">8. You would have an Instagram page for your dog. </label></h4>
-          <select class="form-control">
+          <select class="form-control" id="question8">
             <option>Please select your answer</option>
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
@@ -155,7 +155,7 @@
       <div class="col-md-8">
         <div class="form-group">
           <h4><label for="question9">9. You would let your dog ride in the car with the windwos down. </label></h4>
-          <select class="form-control">
+          <select class="form-control" id="question9">
             <option>Please select your answer</option>
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
@@ -168,7 +168,7 @@
       <div class="col-md-8">
         <div class="form-group">
           <h4><label for="question10">10. You would be willing to do lots of training with your dog. </label></h4>
-          <select class="form-control">
+          <select class="form-control" id="question10">
             <option>Please select your answer</option>
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
@@ -179,12 +179,64 @@
         </div>
       </div>
       <div class="col-md-12">
-        <button type="button" class="btn btn-secondary btn-lg btn-block">Find my doggie match!</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block" id="submit">Find my doggie match!</button>
       </div>
     </div>
   </div>
-  <script type="text/javascript">
 
+  <div id="modalMatch" class="modal">
+    <div class="modal-content">
+      <h4>Closest Dog Match</h4>
+      <div class="divider"></div>
+      <h5 id="match"></h5>
+      <img id="userMatchImg" class="materialboxed" width="650" src="">
+    </div>
+    <div class="modal-footer">
+      <a href="/survey" class="modal-action modal-close waves-effect waves-green btn-flat">Go Again!</a>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('select').material_select();
+      $('.modal').modal({
+        dismissible: false, // Modal can be dismissed by clicking outside of the modal
+        opacity: .5, // Opacity of modal background
+        inDuration: 300, // Transition in duration
+        outDuration: 200, // Transition out duration
+        startingTop: '4%', // Starting top style attribute
+        endingTop: '10%' // Ending top style attribute
+      });
+    });
+    // Activate submit button
+    $('#submit').on('click', function (event) {
+      event.preventDefault();
+      // Gather user inputs
+      var userData = {
+        name: $('#nameInput').val().trim(),
+        photo: $('#addPhoto').val().trim(),
+        scores: [
+          $('#question1').val().trim(),
+          $('#question2').val().trim(),
+          $('#question3').val().trim(),
+          $('#question4').val().trim(),
+          $('#question5').val().trim(),
+          $('#question6').val().trim(),
+          $('#question7').val().trim(),
+          $('#question8').val().trim(),
+          $('#question9').val().trim(),
+          $('#question10').val().trim()
+        ]
+      };
+
+      // Add user selections to dog list
+      $.post('/api/friends', userData)
+        .done(function (data) {
+          $('#userMatch').html(data.matchName);
+          $("#userMatchImg").attr("src", data.matchImg);
+          $('#modalMatch').modal('open');
+        });
+    });
   </script>
 </body>
 

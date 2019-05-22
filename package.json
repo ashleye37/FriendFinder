@@ -1,7 +1,7 @@
 {
-  "name": "starwars",
+  "name": "FriendFinder",
   "version": "1.0.0",
-  "description": "Helps you find the dog you are looking for",
+  "description": "Node/Express app that matches you with the best dog for you",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.19.0",
