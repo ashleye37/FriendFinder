@@ -1,4 +1,4 @@
-var dogArray = [
+var dogsArray = [
 	{
 		name: 'Pallo the Pomeranian',
 		photo: 'https://woofdog.org/wp-content/uploads/2017/04/Pomeranian-cost-696x454.jpg',
@@ -136,4 +136,4 @@ var dogArray = [
 		]
   }];
 
-  module.exports = dogArray;
+  module.exports = dogsArray;
