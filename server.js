@@ -8,17 +8,16 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Expose access CSS files
-app.use(express.static(path.join(__dirname, '/app/public/css')));
+app.use(express.static(__dirname, "./app/public/css"));
 
 // Add middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Add routes
-require(path.join(__dirname, './routing/apiRouting.js'))(app);
-require(path.join(__dirname, './routing/htmlRouting.js'))(app);
+require("./app/routing/apiRouting")(app);
+require("./app/routing/htmlRoutes")(app);
 
 // Start listening on PORT
 app.listen(PORT, function() {
