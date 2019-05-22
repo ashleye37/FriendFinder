@@ -6,74 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <!--Link to Bootstap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <!-- Link to reset stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
 
   <title>Friend Finder Survey</title>
 </head>
 
 <body>
-  <div class="jumbotron">
-    <h1>Friend Finder Survey</h1>
-    <h3>Answer the questions below and hit submit to find your perfect match!</h3>
+  <div class="jumbotron" id="surveyIntro">
+    <h1>Dog Friend Finder Survey</h1>
+    <h3>Answer the questions below and hit submit to find your perfect dog match!</h3>
   </div>
 
-  <div class="container">
+  <div class="container" id="surveyForm">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12" id="surveyTitle">
         <h3>Basic Info: </h3>
       </div>
-      <div class="form-group">
-        <label for="name">Full Name:</label>
-        <input type="name" class="form-control" id="nameInput" aria-describedby="nameInput" placeholder="Example: John Doe">
+      <div class="col-md-8">
+        <div class="form-group">
+          <h4><label for="name">Full Name:</label></h4>
+          <input type="name" class="form-control" id="nameInput" aria-describedby="nameInput" placeholder="Example: John Doe">
+        </div>
       </div>
-      <div class="form-group">
-        <label for="addPhoto">Add A Photo:</label>
-        <input type="file" class="form-control-file" id="addPhoto">
+      <div class="col-md-3">
+        <div class="form-group">
+          <h4><label for="addPhoto">Add A Photo:</label></h4>
+          <input type="file" class="form-control-file" id="addPhoto">
+        </div>
       </div>
-      <div class="col-md-12">
-        <h3>Please answer the 10 questions below with the best answer that suites you. 1 means that you strongly
-          disagree and 5 means that you strongly agree. </h3>
+      <div class="col-md-12" id="surveyTitle">
+        <h3>Please answer the 10 questions below with the best answer that suites you.</h3>
+        <h3>1 means that you strongly disagree and 5 means that you strongly agree. </h3>
       </div>
-      <div class="form-group">
-        <h4><label for="question1">1. Your ideal night out is drinks and then clubbing. </label></h4>
-        <select class="form-control">
-          <option>Please select your answer</option>
-          <option>1 (Strongly Disagree)</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5 (Strongly Agree)</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <h4><label for="question2">2. Your ideal holiday is laying on a beach with a umbrella drink. </label></h4>
-        <select class="form-control">
-          <option>Please select your answer</option>
-          <option>1 (Strongly Disagree)</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5 (Strongly Agree)</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <h4><label for="question3">3. You would best describe your personality as shy and reserve. </label></h4>
-        <select class="form-control">
-          <option>Please select your answer</option>
-          <option>1 (Strongly Disagree)</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5 (Strongly Agree)</option>
-        </select>
-      </div>
-      <div class="form-group">
-          <h4><label for="question4">4. You classify the most important characteristics in a partner as them being good looking. </label></h4>
+      <div class="col-md-8">
+        <div class="form-group">
+          <h4><label for="question1">1. Your like to go to the dog park. </label></h4>
           <select class="form-control">
             <option>Please select your answer</option>
             <option>1 (Strongly Disagree)</option>
@@ -83,53 +60,132 @@
             <option>5 (Strongly Agree)</option>
           </select>
         </div>
+      </div>
+      <div class="col-md-8">
         <div class="form-group">
-            <h4><label for="question5">5. The most important characteristic in a partner is for them to be good looking. </label></h4>
-            <select class="form-control">
-              <option>Please select your answer</option>
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
-            </select>
-          </div>
-          <div class="form-group">
-              <h4><label for="question6">6. You would describe your parent's marriage as happy, affectionate and loving. </label></h4>
-              <select class="form-control">
-                <option>Please select your answer</option>
-                <option>1 (Strongly Disagree)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5 (Strongly Agree)</option>
-              </select>
-            </div>
-            <div class="form-group">
-                <h4><label for="question7">7. You believe that online dating is an effective way to meet someone. </label></h4>
-                <select class="form-control">
-                  <option>Please select your answer</option>
-                  <option>1 (Strongly Disagree)</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5 (Strongly Agree)</option>
-                </select>
-              </div>
-              <div class="form-group">
-                  <h4><label for="question8">8. When on social media you spend most of your time posting about yourself. </label></h4>
-                  <select class="form-control">
-                    <option>Please select your answer</option>
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
-                  </select>
-                </div>
+          <h4><label for="question2">2. You like to swim. </label></h4>
+          <select class="form-control">
+            <option>Please select your answer</option>
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <h4><label for="question3">3. You consider yourself a high energy individual. </label></h4>
+          <select class="form-control">
+            <option>Please select your answer</option>
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <h4><label for="question4">4. You like long haired dogs. </label></h4>
+          <select class="form-control">
+            <option>Please select your answer</option>
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <h4><label for="question5">5. You are ok with shedding. </label></h4>
+          <select class="form-control">
+            <option>Please select your answer</option>
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <h4><label for="question6">6. You consider yourself an intelligent person. </label></h4>
+          <select class="form-control">
+            <option>Please select your answer</option>
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <h4><label for="question7">7. You enjoy wrestling and playing fetch. </label></h4>
+          <select class="form-control">
+            <option>Please select your answer</option>
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <h4><label for="question8">8. You would have an Instagram page for your dog. </label></h4>
+          <select class="form-control">
+            <option>Please select your answer</option>
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <h4><label for="question9">9. You would let your dog ride in the car with the windwos down. </label></h4>
+          <select class="form-control">
+            <option>Please select your answer</option>
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <h4><label for="question10">10. You would be willing to do lots of training with your dog. </label></h4>
+          <select class="form-control">
+            <option>Please select your answer</option>
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <button type="button" class="btn btn-secondary btn-lg btn-block">Find my doggie match!</button>
+      </div>
     </div>
   </div>
+  <script type="text/javascript">
 
+  </script>
 </body>
 
 </html>

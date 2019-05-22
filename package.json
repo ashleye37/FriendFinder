@@ -1,10 +1,12 @@
 {
   "name": "starwars",
   "version": "1.0.0",
-  "description": "Helps you find the characters you are looking for",
+  "description": "Helps you find the dog you are looking for",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.3"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.0",
+    "path": "^0.12.7"
   },
   "scripts": {
     "start": "node server.js"

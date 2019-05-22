@@ -1,0 +1,29 @@
+#homePage {
+  background: url("./background.jpg") center;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  color: white;
+  text-align: center;
+  padding: 350px;
+
+}
+
+.btn {
+  width: 30%;
+  margin-left: 250px;
+}
+
+#surveyIntro {
+  text-align: center;
+  background: url("./background.jpg");
+  color: white;
+}
+
+#surveyForm {
+  background: url("./light_grey.png");
+}
+
+#surveyTitle {
+  margin-bottom: 20px;
+}
