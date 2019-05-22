@@ -1,6 +1,3 @@
-// Pull in required dependencies
-var path = require('path');
-
 // Import the list of dog entries
 var dogs = require('../data/friends.js');
 
@@ -15,13 +12,12 @@ module.exports = function(app) {
 	// Add new friend entry
 	app.post('/api/friends', function(req, res) {
 		var userInput = req.body;
-
 		var userSelections = userInput.scores;
 
 		// Compute best dog match
 		var matchName = '';
 		var matchImg = '';
-		var totalDifference = 10000; // Make the initial value big for comparison
+		var totalDifference = 50; // Make the initial value big for comparison
 
 		// Examine all existing dogs in the list
 		for (var i = 0; i < dogs.length; i++) {
