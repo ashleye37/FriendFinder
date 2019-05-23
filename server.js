@@ -8,7 +8,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Expose access CSS files
-// app.use(express.static(__dirname, "/app/public/css"));
+app.use(express.static(path.join(__dirname,"./app/public/css")));
 
 // Add middleware
 app.use(bodyParser.json());
