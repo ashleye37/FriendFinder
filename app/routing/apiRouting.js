@@ -10,7 +10,7 @@ module.exports = function(app) {
 	});
 
 	// Add new friend entry
-	app.post('/api/friends', function(req, res) {
+	app.post("/api/friends", function(req, res) {
 		var userInput = req.body;
 		var userSelections = userInput.scores;
 
