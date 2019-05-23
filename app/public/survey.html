@@ -184,20 +184,29 @@
     </div>
   </div>
 
-  <div id="modalMatch" class="modal fade">
-    <div class="modal-content">
-      <h4>Dog Match</h4>
-      <div class="divider"></div>
-      <h5 id="match"></h5>
-      <img id="matchImg" class="materialboxed" width="650" src="">
-    </div>
-    <div class="modal-footer">
-      <a href="/survey" class="modal-action modal-close btn-default">Go Again!</a>
+  <div id="modalMatch" class="modal fade" role="diaglog">
+    <div class="modal-diaglog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="modal-title">Your New Doggie Friend</h1>
+        </div>
+        <div class="modal-body">
+          <h2 id="match"></h2>
+          <img id="matchImg" width="650" src="#">
+        </div>
+        <div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
   </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 
 </html>
